@@ -12,11 +12,17 @@ html, body {
   text-align: center;
 }
 
-#left-panel {
+#menu-panel {
+  position: relative;
   float:left;
   width:20vw;
   height:$height-contenu;
   border:1px solid grey;
+  .credits {
+    position: absolute;
+    text-align:center;
+    bottom:0;
+  }
 }
 
 #map {

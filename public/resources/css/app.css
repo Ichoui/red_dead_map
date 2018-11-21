@@ -6322,11 +6322,16 @@ html, body {
   height: calc(98vh - 90vh);
   text-align: center; }
 
-#left-panel {
+#menu-panel {
+  position: relative;
   float: left;
   width: 20vw;
   height: 90vh;
   border: 1px solid grey; }
+  #menu-panel .credits {
+    position: absolute;
+    text-align: center;
+    bottom: 0; }
 
 #map {
   float: left;
