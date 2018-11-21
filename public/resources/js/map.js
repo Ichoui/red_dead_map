@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // #####################  MAP DECLARATION  #####################
-    // declare Map object
+    // Map object declaration
     let map = L.map('map').setView([0, 0], 3);
     L.tileLayer('/resources/img/map/{z}/{x}/{y}.png', {
         minZoom: 3,
@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     }).addTo(map);
 
-    // Pour définir les limites max de la map
+    // Borders (in px) of our map
     let mapSW = [0, 16128],
         mapNE = [16128, 0];
     map.setMaxBounds(new L.LatLngBounds(
@@ -23,15 +23,15 @@ $(document).ready(function () {
     window.icons = {};
     let icons = window.icons;
 
-    icons.collectibleTest = L.icon({iconUrl: '/resources/img/marker-icon.png', iconSize: [24, 24]});
-    icons.iconToto = L.icon({iconUrl: '/resources/img/thomas-marker.png', iconSize: [24, 24]});
+    // icons users
     icons.iconPetit = L.icon({iconUrl: '/resources/img/morgan-marker.png', iconSize: [24, 24]});
+    icons.iconToto = L.icon({iconUrl: '/resources/img/thomas-marker.png', iconSize: [24, 24]});
     icons.iconGG = L.icon({iconUrl: '/resources/img/gaetan-marker.png', iconSize: [24, 24]});
+    // icons
+    icons.iconTest = L.icon({iconUrl: '/resources/img/marker-icon.png', iconSize: [24, 24]});
 
-    let iconsLength = Object.keys(icons).length; // obtenir length du json array icons
-
-    // #####################  MARQUEURS DEVELOPPEUR  #####################
-    //// 8192 8192 = milieu parfait en pixel
+    // #####################  USERS MOVABLE MARKERS  #####################
+    //// 8192 8192 = perfect map middle (in pixel)
     let markerMorgan = L.marker(map.unproject([8192, 8192], map.getMaxZoom()), {icon: icons.iconPetit, draggable: true}).addTo(map).bindPopup('Marqueur Morgan');
     $(markerMorgan).on('dragend', function (e) {
         console.log(markerMorgan.getLatLng().toString());
@@ -50,28 +50,40 @@ $(document).ready(function () {
         console.log('Pixels : ' + map.project(markerThomas.getLatLng(), map.getMaxZoom().toString()))
     });
 
-
-    // #####################  GROUPES DE COLLECTIBLES #####################
-    var os = L.layerGroup([]);
-    var sculptures = L.layerGroup([]);
-
-
-    // #####################  MARKERS COLLECTIBLES  #####################
-
+    // #####################  MARKERS FUNCTION  #####################
     function customMarker(x, y, icon, group, message) {
-        console.log(icon);
         L.marker(map.unproject([x, y], map.getMaxZoom()), {icon: icon}).addTo(group).bindPopup(message);
     }
 
-    customMarker(11225,12245, icons.iconPetit, os, "aaaaaa");
-    customMarker(11225,8500, icons.iconPetit, sculptures, "aaaaaa");
 
-    // L.marker(map.unproject([11225, 7004], map.getMaxZoom()), {icon: icons.collectibleTest}).addTo(sculptures).bindPopup('sculpture');
-    // L.marker(map.unproject([10220, 7004], map.getMaxZoom()), {icon: icons.collectibleTest}).addTo(os).bindPopup('Mon os');
+    // #####################
+    // HERE IS THE MAIN PART TO UPDATE
+    // WITH CUSTOMS X - Y AXES / ICON / GROUP / MESSAGE
+    // #####################
+
+    // #####################  COLLECTIBLE GROUPS #####################
+    let os = L.layerGroup([]);
+    let sculptures = L.layerGroup([]);
+
+    // #####################  MARKERS COLLECTIBLES  #####################
+    /**
+     * customMarker @args
+     * @arg1 : Axe X
+     * @arg2 : Axe Y
+     * @arg3 : Icon
+     * @arg4 : Collectible group
+     * @arg15: Message to show in popup
+     */
+
+    // GROUP : DINOSAURES
+    customMarker(11225, 12245, icons.iconTest, os, "aaaaaa");
+
+    // GROUP : SCULPTURES
+    customMarker(11225, 8500, icons.iconTest, sculptures, "aaaaaa");
 
 
-    // #####################  AJOUTER LES GROUPES A LA MAP  #####################
-    var overlays = {
+    // #####################  ADD GROUPS TO THE MAP OBJECT  #####################
+    const overlays = {
         "Os de dinosaures": os,
         "Sculptures": sculptures
     };
