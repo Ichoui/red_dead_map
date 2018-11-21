@@ -1,16 +1,31 @@
+$height-contenu: 90vh;
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
-#map {
-  width:100%;
-  height:100%;
-  color: #CCC;
-  background: #EFEFEF;
-}
-span.loading {
-  display: block;
+
+#menubar {
+  height: calc(98vh - #{$height-contenu});
   text-align: center;
-  font: 300 italic 72px/400px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
+}
+
+#left-panel {
+  float:left;
+  width:20vw;
+  height:$height-contenu;
+  border:1px solid grey;
+}
+
+#map {
+  float:left;
+  height:$height-contenu;
+  width:75vw;
+}
+
+.clearboth:after {
+  clear:both;
+  content:'';
 }

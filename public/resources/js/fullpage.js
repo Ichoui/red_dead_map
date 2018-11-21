@@ -3,8 +3,8 @@ $(document).ready(function () {
      * = PS_Bramus.GoogleMapsTileCutter Config
      * ----------------
      */
-
-    var repeatOnXAxis = true; // Do we need to repeat the image on the X-axis? Most likely you'll want to set this to false
+    //
+    // var repeatOnXAxis = false   ; // Do we need to repeat the image on the X-axis? Most likely you'll want to set this to false
 
     /*
      * Helper function which normalizes the coords so that tiles can repeat across the X-axis (horizontally) like the standard Google map tiles.
@@ -12,7 +12,7 @@ $(document).ready(function () {
      */
 
     function getNormalizedCoord(coord, zoom) {
-        if (!repeatOnXAxis) return coord;
+        if (!(true)) return coord;
 
         var y = coord.y;
         var x = coord.x;
