@@ -12,4 +12,6 @@ $(document).ready(function () {
     $('#map').append(zoom)
 
 
+    $('.leaflet-control-layers-toggle').remove(); // layer image toogle
+
 });

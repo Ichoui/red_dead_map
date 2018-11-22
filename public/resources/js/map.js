@@ -24,11 +24,11 @@ $(document).ready(function () {
     let icons = window.icons;
 
     // icons users
-    icons.iconPetit = L.icon({iconUrl: '/resources/img/morgan-marker.png', iconSize: [24, 24]});
-    icons.iconToto = L.icon({iconUrl: '/resources/img/thomas-marker.png', iconSize: [24, 24]});
-    icons.iconGG = L.icon({iconUrl: '/resources/img/gaetan-marker.png', iconSize: [24, 24]});
+    icons.iconPetit = L.icon({iconUrl: '/resources/img/markers/morgan-marker.png', iconSize: [24, 24]});
+    icons.iconToto = L.icon({iconUrl: '/resources/img/markers/thomas-marker.png', iconSize: [24, 24]});
+    icons.iconGG = L.icon({iconUrl: '/resources/img/markers/gaetan-marker.png', iconSize: [24, 24]});
     // icons
-    icons.iconTest = L.icon({iconUrl: '/resources/img/marker-icon.png', iconSize: [24, 24]});
+    icons.iconTest = L.icon({iconUrl: '/resources/img/markers/marker-icon.png', iconSize: [24, 24]});
 
     // #####################  USERS MOVABLE MARKERS  #####################
     //// 8192 8192 = perfect map middle (in pixel)
@@ -84,8 +84,8 @@ $(document).ready(function () {
 
     // #####################  ADD GROUPS TO THE MAP OBJECT  #####################
     const overlays = {
-        "Os de dinosaures": os,
-        "Sculptures": sculptures
+        "<span class='iconic icon-bone'>Os de dinosaures</span>": os,
+        "<span class='iconic icon-statue'>Sculptures</span>": sculptures
     };
     L.control.layers(null, overlays).addTo(map);
 

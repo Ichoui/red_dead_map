@@ -1,0 +1,27 @@
+$rdr2-red-title: #ee0000;
+$rdr2-red-light: #c00;
+$rdr2-red-darker: #c71d1d;
+$rdr2-black: #010000;
+$rdr2-white: #fff;
+$rdr2-bgc: #2e0002;
+
+$font-rockstar:ChineseRocksRg;
+
+@font-face {
+  font-family: 'ChineseRocksRg';
+  src: url('../fonts/ChineseRocksRg-Regular.eot');
+  src: url('../fonts/ChineseRocksRg-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ChineseRocksRg-Regular.woff2') format('woff2'),
+  url('../fonts/ChineseRocksRg-Regular.woff') format('woff'),
+  url('../fonts/ChineseRocksRg-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: $font-rockstar;
+}

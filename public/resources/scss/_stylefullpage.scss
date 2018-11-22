@@ -1,15 +1,23 @@
+@import '../scss/config';
+
 $height-contenu: 90vh;
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 #menubar {
-  height: calc(98vh - #{$height-contenu});
-  text-align: center;
+  height: calc(95vh - #{$height-contenu});
+  background-color: $rdr2-black;
+  display: flex;
+  align-items: center;
+  .title {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 1.3em;
+    color: white;
+    &:hover {
+      color:$rdr2-red-title;
+      cursor:pointer;
+    }
+
+  }
 }
 
 #menu-panel {
@@ -20,8 +28,9 @@ html, body {
   border: 1px solid grey;
   .copyrights {
     position: absolute;
-    text-align: center;
-    bottom: 0;
+    text-align: justify;
+    bottom: 2px;
+    font-size: .8em;
   }
 }
 
@@ -36,7 +45,12 @@ html, body {
   content: '';
 }
 
-// Modif CSS leaflet
+//############ Modif CSS leaflet ###########
+
+// Classe mutuelle à leaflet-left & right
+.leaflet-top {
+  position: unset;
+}
 
 // -> Zoom + / -
 .leaflet-left {
@@ -47,70 +61,29 @@ html, body {
 
 // -> Menu
 .leaflet-right {
-/*  left: 0;
-  right: unset;*/
+  .leaflet-control {
+    float: none !important;
+  }
+  form.leaflet-control-layers-list {
+    label {
+      display: block;
+    }
+    .leaflet-control-layers-overlays {
+      padding: 10px;
+      div {
+        input {
+          display: none;
+        }
+        span {
+          &:hover {
+            cursor: pointer;
+          }
+          .iconic:before {
+            color: red;
+          }
+        }
+      }
+    }
+  }
 }
 
-.leaflet-top {
-  position: unset;
-}
-
-.leaflet-control-layers {
-/*  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background: #fff;
-  border-radius: 5px;*/
-}
-
-.leaflet-control-layers-toggle {
-  background-image: url(images/layers.png);
-  width: 36px;
-  height: 36px;
-}
-
-.leaflet-retina .leaflet-control-layers-toggle {
-  background-image: url(images/layers-2x.png);
-  background-size: 26px 26px;
-}
-
-.leaflet-touch .leaflet-control-layers-toggle {
-  width: 44px;
-  height: 44px;
-}
-
-.leaflet-control-layers .leaflet-control-layers-list,
-.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
-  display: none;
-}
-
-.leaflet-control-layers-expanded .leaflet-control-layers-list {
-  display: block;
-  position: relative;
-}
-
-.leaflet-control-layers-expanded {
-/*  padding: 6px 10px 6px 6px;
-  color: #333;
-  background: #fff;*/
-}
-
-.leaflet-control-layers-scrollbar {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  padding-right: 5px;
-}
-
-.leaflet-control-layers-selector {
-  margin-top: 2px;
-  position: relative;
-  top: 1px;
-}
-
-.leaflet-control-layers label {
-  display: block;
-}
-
-.leaflet-control-layers-separator {
-  height: 0;
-  border-top: 1px solid #ddd;
-  margin: 5px -10px 5px -6px;
-}
