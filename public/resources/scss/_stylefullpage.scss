@@ -32,10 +32,16 @@ $height-contenu: 90vh;
     position: absolute;
     text-align: justify;
     bottom: 2px;
-    font-size: .8em;
+    font-size: .88em;
     padding: 0 8px;
+    hr {
+      border-bottom: 1px solid white;
+    }
     a {
       color: $rockstar-brand;
+    }
+    span {
+      font-size: .8em;
     }
   }
 }
@@ -64,9 +70,13 @@ $height-contenu: 90vh;
   left: unset;
   position: absolute !important;
   .leaflet-control {
-    border:2px solid $rdr2-bgc;
+    border: 2px solid $rdr2-bgc;
     a {
       color: $rdr2-bgc
+    }
+    a.leaflet-disabled {
+      color: white;
+      background-color: $rdr2-bgc;
     }
   }
 }

@@ -6386,10 +6386,14 @@ html, body {
     position: absolute;
     text-align: justify;
     bottom: 2px;
-    font-size: .8em;
+    font-size: .88em;
     padding: 0 8px; }
+    #menu-panel .copyrights hr {
+      border-bottom: 1px solid white; }
     #menu-panel .copyrights a {
       color: #ffab00; }
+    #menu-panel .copyrights span {
+      font-size: .8em; }
 
 #map {
   float: left;
@@ -6411,6 +6415,9 @@ html, body {
     border: 2px solid #2e0002; }
     .leaflet-left .leaflet-control a {
       color: #2e0002; }
+    .leaflet-left .leaflet-control a.leaflet-disabled {
+      color: white;
+      background-color: #2e0002; }
 
 .leaflet-right .leaflet-control {
   float: none !important; }
