@@ -6328,7 +6328,7 @@ html, body {
   width: 20vw;
   height: 90vh;
   border: 1px solid grey; }
-  #menu-panel .credits {
+  #menu-panel .copyrights {
     position: absolute;
     text-align: center;
     bottom: 0; }
@@ -6344,16 +6344,20 @@ html, body {
 
 .leaflet-left {
   right: 5px;
-  left: unset; }
+  left: unset;
+  position: absolute !important; }
 
 .leaflet-right {
-  left: 0;
-  right: unset; }
+  /*  left: 0;
+  right: unset;*/ }
+
+.leaflet-top {
+  position: unset; }
 
 .leaflet-control-layers {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  /*  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
   background: #fff;
-  border-radius: 5px; }
+  border-radius: 5px;*/ }
 
 .leaflet-control-layers-toggle {
   background-image: url(images/layers.png);
@@ -6377,9 +6381,9 @@ html, body {
   position: relative; }
 
 .leaflet-control-layers-expanded {
-  padding: 6px 10px 6px 6px;
+  /*  padding: 6px 10px 6px 6px;
   color: #333;
-  background: #fff; }
+  background: #fff;*/ }
 
 .leaflet-control-layers-scrollbar {
   overflow-y: scroll;
