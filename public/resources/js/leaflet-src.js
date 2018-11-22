@@ -5155,8 +5155,6 @@ var Layers = Control.extend({
 		on(input, 'click', this._onInputClick, this);
 
 		var name = document.createElement('span');
-        console.log(obj); // pute
-		name.className = 'icon-';
 		name.innerHTML = ' ' + obj.name;
 
 		// Helps from preventing layer control flicker when checkboxes are disabled

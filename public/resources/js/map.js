@@ -7,9 +7,10 @@ $(document).ready(function () {
         minZoom: 3,
         maxZoom: 6,
         noWrap: true,
-        crs: L.CRS.simple
+        crs: L.CRS.simple,
 
     }).addTo(map);
+    map.addControl(new L.Control.Fullscreen());
 
     // Borders (in px) of our map
     let mapSW = [0, 16128],
@@ -84,8 +85,8 @@ $(document).ready(function () {
 
     // #####################  ADD GROUPS TO THE MAP OBJECT  #####################
     const overlays = {
-        "<span class='iconic icon-bone'>Os de dinosaures</span>": os,
-        "<span class='iconic icon-statue'>Sculptures</span>": sculptures
+        "<span class='iconic icon-bone'></span>Os de dinosaures": os,
+        "<span class='iconic icon-statue'></span>Sculptures": sculptures
     };
     L.control.layers(null, overlays).addTo(map);
 
