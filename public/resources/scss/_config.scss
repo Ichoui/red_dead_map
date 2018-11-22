@@ -4,7 +4,7 @@ $rdr2-red-darker: #c71d1d;
 $rdr2-black: #010000;
 $rdr2-white: #fff;
 $rdr2-bgc: #2e0002;
-
+$rockstar-brand: #ffab00;
 $font-rockstar:ChineseRocksRg;
 
 @font-face {
@@ -23,5 +23,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  color:white;
+  letter-spacing: .8px;
   font-family: $font-rockstar;
+  background-color: $rdr2-bgc;
 }

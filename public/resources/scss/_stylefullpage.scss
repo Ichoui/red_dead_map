@@ -13,8 +13,8 @@ $height-contenu: 90vh;
     font-size: 1.3em;
     color: white;
     &:hover {
-      color:$rdr2-red-title;
-      cursor:pointer;
+      color: $rdr2-red-title;
+      cursor: pointer;
     }
 
   }
@@ -25,12 +25,14 @@ $height-contenu: 90vh;
   float: left;
   width: 20vw;
   height: $height-contenu;
-  border: 1px solid grey;
   .copyrights {
     position: absolute;
     text-align: justify;
     bottom: 2px;
     font-size: .8em;
+    a {
+      color: $rockstar-brand;
+    }
   }
 }
 
@@ -75,11 +77,17 @@ $height-contenu: 90vh;
           display: none;
         }
         span {
+          .iconic {
+            font-size: 1.5em;
+            color: $rdr2-red-light;
+            padding-right: 8px;
+          }
           &:hover {
             cursor: pointer;
-          }
-          .iconic:before {
-            color: red;
+            .iconic {
+            color: $rdr2-white;
+
+            }
           }
         }
       }

@@ -6355,7 +6355,10 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: ChineseRocksRg; }
+  color: white;
+  letter-spacing: .8px;
+  font-family: ChineseRocksRg;
+  background-color: #2e0002; }
 
 #menubar {
   height: calc(95vh - 90vh);
@@ -6375,13 +6378,14 @@ html, body {
   position: relative;
   float: left;
   width: 20vw;
-  height: 90vh;
-  border: 1px solid grey; }
+  height: 90vh; }
   #menu-panel .copyrights {
     position: absolute;
     text-align: justify;
     bottom: 2px;
     font-size: .8em; }
+    #menu-panel .copyrights a {
+      color: #ffab00; }
 
 #map {
   float: left;
@@ -6410,7 +6414,11 @@ html, body {
   padding: 10px; }
   .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div input {
     display: none; }
+  .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span .iconic {
+    font-size: 1.5em;
+    color: #c00;
+    padding-right: 8px; }
   .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span:hover {
     cursor: pointer; }
-  .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span .iconic:before {
-    color: red; }
+    .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span:hover .iconic {
+      color: #fff; }
