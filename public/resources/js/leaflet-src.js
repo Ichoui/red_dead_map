@@ -4969,14 +4969,14 @@ var Layers = Control.extend({
 	// @method expand(): this
 	// Expand the control container if collapsed.
 	expand: function () {
-		addClass(this._container, 'leaflet-control-layers-expanded');
+		// addClass(this._container, 'leaflet-control-layers-expanded');
 		this._form.style.height = null;
 		var acceptableHeight = this._map.getSize().y - (this._container.offsetTop + 50);
 		if (acceptableHeight < this._form.clientHeight) {
-			addClass(this._form, 'leaflet-control-layers-scrollbar');
+			// addClass(this._form, 'leaflet-control-layers-scrollbar');
 			this._form.style.height = acceptableHeight + 'px';
 		} else {
-			removeClass(this._form, 'leaflet-control-layers-scrollbar');
+			// removeClass(this._form, 'leaflet-control-layers-scrollbar');
 		}
 		this._checkDisabledLayers();
 		return this;
@@ -4985,7 +4985,7 @@ var Layers = Control.extend({
 	// @method collapse(): this
 	// Collapse the control container if expanded.
 	collapse: function () {
-		removeClass(this._container, 'leaflet-control-layers-expanded');
+		// removeClass(this._container, 'leaflet-control-layers-expanded');²
 		return this;
 	},
 
