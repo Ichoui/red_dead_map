@@ -28,10 +28,11 @@ $height-contenu: 90vh;
   height: $height-contenu;
   z-index: 404;
   box-shadow: 3px 1px 18px 1px $rdr2-bgc;
+  display:flex;
+  flex-direction: column;
+  //justify-content: flex-end;;
   .copyrights {
-    position: absolute;
     text-align: justify;
-    bottom: 2px;
     font-size: .88em;
     padding: 0 8px;
     hr {
@@ -89,6 +90,15 @@ $height-contenu: 90vh;
   form.leaflet-control-layers-list {
     label {
       display: block;
+      z-index: 200;
+    }
+    .disabled {
+      span:nth-child(2) {
+        text-decoration: line-through;
+      }
+      span {
+        color:lightgray !important;
+      }
     }
     .leaflet-control-layers-overlays {
       padding: 10px;

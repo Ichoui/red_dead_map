@@ -5155,12 +5155,12 @@ var Layers = Control.extend({
 		on(input, 'click', this._onInputClick, this);
 
 		var name = document.createElement('span');
+        name.className = 'state';
 		name.innerHTML = ' ' + obj.name;
 
 		// Helps from preventing layer control flicker when checkboxes are disabled
 		// https://github.com/Leaflet/Leaflet/issues/2771
 		var holder = document.createElement('div');
-
 		label.appendChild(holder);
 		holder.appendChild(input);
 		holder.appendChild(name);

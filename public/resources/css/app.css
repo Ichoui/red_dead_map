@@ -6381,11 +6381,11 @@ html, body {
   width: 20vw;
   height: 90vh;
   z-index: 404;
-  box-shadow: 3px 1px 18px 1px #2e0002; }
+  box-shadow: 3px 1px 18px 1px #2e0002;
+  display: flex;
+  flex-direction: column; }
   #menu-panel .copyrights {
-    position: absolute;
     text-align: justify;
-    bottom: 2px;
     font-size: .88em;
     padding: 0 8px; }
     #menu-panel .copyrights hr {
@@ -6423,7 +6423,14 @@ html, body {
   float: none !important; }
 
 .leaflet-right form.leaflet-control-layers-list label {
-  display: block; }
+  display: block;
+  z-index: 200; }
+
+.leaflet-right form.leaflet-control-layers-list .disabled span:nth-child(2) {
+  text-decoration: line-through; }
+
+.leaflet-right form.leaflet-control-layers-list .disabled span {
+  color: lightgray !important; }
 
 .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays {
   padding: 10px; }

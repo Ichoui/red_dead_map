@@ -85,8 +85,8 @@ $(document).ready(function () {
 
     // #####################  ADD GROUPS TO THE MAP OBJECT  #####################
     const overlays = {
-        "<span class='iconic icon-bone'></span>Os de dinosaures": os,
-        "<span class='iconic icon-statue'></span>Sculptures": sculptures
+        "<span class='iconic icon-bone'></span><span>Os de dinosaures</span>": os,
+        "<span class='iconic icon-statue'></span><span>Sculptures</span>": sculptures
     };
     L.control.layers(null, overlays).addTo(map);
 
