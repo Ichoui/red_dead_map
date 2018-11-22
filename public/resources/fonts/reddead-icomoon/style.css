@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'reddead';
+  font-family: 'reddead-icomoon';
   src:
-    url('fonts/reddead.ttf?idd06h') format('truetype'),
-    url('fonts/reddead.woff?idd06h') format('woff'),
-    url('fonts/reddead.svg?idd06h#reddead') format('svg');
+    url('fonts/reddead-icomoon.ttf?k66fuu') format('truetype'),
+    url('fonts/reddead-icomoon.woff?k66fuu') format('woff'),
+    url('fonts/reddead-icomoon.svg?k66fuu#reddead-icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'reddead' !important;
+  font-family: 'reddead-icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;

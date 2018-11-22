@@ -4,9 +4,10 @@ $height-contenu: 90vh;
 
 #menubar {
   height: calc(95vh - #{$height-contenu});
-  background-color: $rdr2-black;
   display: flex;
   align-items: center;
+  background-color: $rdr2-black;
+  min-height: 50px;
   .title {
     text-align: left;
     margin-left: 10px;
@@ -25,11 +26,14 @@ $height-contenu: 90vh;
   float: left;
   width: 20vw;
   height: $height-contenu;
+  z-index: 404;
+  box-shadow: 3px 1px 18px 1px $rdr2-bgc;
   .copyrights {
     position: absolute;
     text-align: justify;
     bottom: 2px;
     font-size: .8em;
+    padding: 0 8px;
     a {
       color: $rockstar-brand;
     }
@@ -59,6 +63,12 @@ $height-contenu: 90vh;
   right: 5px;
   left: unset;
   position: absolute !important;
+  .leaflet-control {
+    border:2px solid $rdr2-bgc;
+    a {
+      color: $rdr2-bgc
+    }
+  }
 }
 
 // -> Menu
@@ -85,7 +95,7 @@ $height-contenu: 90vh;
           &:hover {
             cursor: pointer;
             .iconic {
-            color: $rdr2-white;
+              color: $rdr2-white;
 
             }
           }
