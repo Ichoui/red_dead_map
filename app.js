@@ -22,7 +22,7 @@ app.set('view engine', 'ejs'); //préchargement engine
 app.set('views', path.join(__dirname, '/public/')); // changement du dossier views
 
 //  ACCES AUX PATHS API & Index
-app.use(express.static(path.join(__dirname, 'public'))); // donne les droits d'accès au dossier public (pour les resources)
+app.use(express.static(path.join(__dirname, 'public/'))); // donne les droits d'accès au dossier public (pour les resources)
 app.get('/', function (req, res) {
     res.render('index');
 });

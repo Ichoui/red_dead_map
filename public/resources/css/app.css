@@ -6312,26 +6312,88 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+@font-face {
+  font-family: 'reddead-icomoon';
+  src: url("../fonts/reddead-icomoon/fonts/reddead-icomoon.ttf?k66fuu") format("truetype"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.woff?k66fuu") format("woff"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.svg?k66fuu#reddead-icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'reddead-icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-zoom-out:before {
+  content: "\e900"; }
+
+.icon-statue:before {
+  content: "\e901"; }
+
+.icon-bone:before {
+  content: "\e902"; }
+
+.icon-zoom-in:before {
+  content: "\e903"; }
+
+@font-face {
+  font-family: 'ChineseRocksRg';
+  src: url("../fonts/ChineseRocksRg-Regular.eot");
+  src: url("../fonts/ChineseRocksRg-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ChineseRocksRg-Regular.woff2") format("woff2"), url("../fonts/ChineseRocksRg-Regular.woff") format("woff"), url("../fonts/ChineseRocksRg-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  color: white;
+  letter-spacing: .8px;
+  font-family: ChineseRocksRg;
+  background-color: #2e0002; }
 
 #menubar {
-  height: calc(98vh - 90vh);
-  text-align: center; }
+  height: calc(95vh - 90vh);
+  display: flex;
+  align-items: center;
+  background-color: #010000;
+  min-height: 50px; }
+  #menubar .title {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 1.3em;
+    color: white; }
+    #menubar .title:hover {
+      color: #ee0000;
+      cursor: pointer; }
 
 #menu-panel {
   position: relative;
   float: left;
   width: 20vw;
   height: 90vh;
-  border: 1px solid grey; }
-  #menu-panel .credits {
-    position: absolute;
-    text-align: center;
-    bottom: 0; }
+  z-index: 404;
+  box-shadow: 3px 1px 18px 1px #2e0002;
+  display: flex;
+  flex-direction: column; }
+  #menu-panel .copyrights {
+    text-align: justify;
+    font-size: .88em;
+    padding: 0 8px; }
+    #menu-panel .copyrights hr {
+      border-bottom: 1px solid white; }
+    #menu-panel .copyrights a {
+      color: #ffab00; }
+    #menu-panel .copyrights span {
+      font-size: .8em; }
 
 #map {
   float: left;
@@ -6341,3 +6403,44 @@ html, body {
 .clearboth:after {
   clear: both;
   content: ''; }
+
+.leaflet-top {
+  position: unset; }
+
+.leaflet-left {
+  right: 5px;
+  left: unset;
+  position: absolute !important; }
+  .leaflet-left .leaflet-control {
+    border: 2px solid #2e0002; }
+    .leaflet-left .leaflet-control a {
+      color: #2e0002; }
+    .leaflet-left .leaflet-control a.leaflet-disabled {
+      color: white;
+      background-color: #2e0002; }
+
+.leaflet-right .leaflet-control {
+  float: none !important; }
+
+.leaflet-right form.leaflet-control-layers-list label {
+  display: block;
+  z-index: 200; }
+
+.leaflet-right form.leaflet-control-layers-list .disabled span:nth-child(2) {
+  text-decoration: line-through; }
+
+.leaflet-right form.leaflet-control-layers-list .disabled span {
+  color: lightgray !important; }
+
+.leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays {
+  padding: 10px; }
+  .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div input {
+    display: none; }
+  .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span .iconic {
+    font-size: 1.5em;
+    color: #c00;
+    padding-right: 8px; }
+  .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span:hover {
+    cursor: pointer; }
+    .leaflet-right form.leaflet-control-layers-list .leaflet-control-layers-overlays div span:hover .iconic {
+      color: #fff; }

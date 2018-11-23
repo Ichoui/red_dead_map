@@ -4969,14 +4969,14 @@ var Layers = Control.extend({
 	// @method expand(): this
 	// Expand the control container if collapsed.
 	expand: function () {
-		addClass(this._container, 'leaflet-control-layers-expanded');
+		// addClass(this._container, 'leaflet-control-layers-expanded');
 		this._form.style.height = null;
 		var acceptableHeight = this._map.getSize().y - (this._container.offsetTop + 50);
 		if (acceptableHeight < this._form.clientHeight) {
-			addClass(this._form, 'leaflet-control-layers-scrollbar');
+			// addClass(this._form, 'leaflet-control-layers-scrollbar');
 			this._form.style.height = acceptableHeight + 'px';
 		} else {
-			removeClass(this._form, 'leaflet-control-layers-scrollbar');
+			// removeClass(this._form, 'leaflet-control-layers-scrollbar');
 		}
 		this._checkDisabledLayers();
 		return this;
@@ -4985,7 +4985,7 @@ var Layers = Control.extend({
 	// @method collapse(): this
 	// Collapse the control container if expanded.
 	collapse: function () {
-		removeClass(this._container, 'leaflet-control-layers-expanded');
+		// removeClass(this._container, 'leaflet-control-layers-expanded');²
 		return this;
 	},
 
@@ -5081,7 +5081,7 @@ var Layers = Control.extend({
 		for (i = 0; i < this._layers.length; i++) {
 			obj = this._layers[i];
 			this._addItem(obj);
-			overlaysPresent = overlaysPresent || obj.overlay;
+            overlaysPresent = overlaysPresent || obj.overlay;
 			baseLayersPresent = baseLayersPresent || !obj.overlay;
 			baseLayersCount += !obj.overlay ? 1 : 0;
 		}
@@ -5104,7 +5104,8 @@ var Layers = Control.extend({
 
 		var obj = this._getLayer(stamp(e.target));
 
-		// @namespace Map
+
+        // @namespace Map
 		// @section Layer events
 		// @event baselayerchange: LayersControlEvent
 		// Fired when the base layer is changed through the [layer control](#control-layers).
@@ -5154,12 +5155,12 @@ var Layers = Control.extend({
 		on(input, 'click', this._onInputClick, this);
 
 		var name = document.createElement('span');
+        name.className = 'state';
 		name.innerHTML = ' ' + obj.name;
 
 		// Helps from preventing layer control flicker when checkboxes are disabled
 		// https://github.com/Leaflet/Leaflet/issues/2771
 		var holder = document.createElement('div');
-
 		label.appendChild(holder);
 		holder.appendChild(input);
 		holder.appendChild(name);
@@ -7116,9 +7117,9 @@ function icon(options) {
 var IconDefault = Icon.extend({
 
 	options: {
-		iconUrl:       '/resources/img/marker-icon.png',
-		iconRetinaUrl: '/resources/img/marker-icon-2x.png',
-		shadowUrl:     '/resources/img/marker-shadow.png',
+		iconUrl:       '/resources/img/markers/marker-icon.png',
+		iconRetinaUrl: '/resources/img/markers/marker-icon-2x.png',
+		shadowUrl:     '/resources/img/markers/marker-shadow.png',
 		iconSize:    [25, 41],
 		iconAnchor:  [12, 41],
 		popupAnchor: [1, -34],
