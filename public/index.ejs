@@ -14,20 +14,54 @@
 
 <div id="menubar">
     <span class="title">RED DEAD REDEMPTION 2 - MAP</span>
+    <a href="#" class="login">S'enregistrer</a>
+    <a href="#" class="login">Connexion</a>
 </div>
 <div id="menu-panel" class="clearboth">
     <div class="copyrights">
         <hr>
-            Credits to :
-            <ul>
-                <li>Le Petit <span>(Developper)</span></li>
-                <li>Tarti <span>(Map Builder)</span></li>
-                <li>Zaetan <span>('cause he's in our PS4 party every night)</span></li>
-            </ul>
+        Credits to :
+        <ul>
+            <li>Le Petit <span>(Developper)</span></li>
+            <li>Tarti <span>(Map Builder)</span></li>
+            <li>Zaetan <span>('cause he's in our PS4 party every night)</span></li>
+        </ul>
         <div>All of the content belongs to <a href="https://www.rockstargames.com/reddeadredemption2/" title="Rockstar Games">Rockstar&nbsp;Games</a></div>
     </div>
 </div>
 <div id="map" class="clearboth"></div>
+
+<div class="popup connexion">
+    <div class="popin-content">
+        <div class="close-popin">Close</div>
+        <form action="">
+            <div>
+                <input type="text" id="pseudo-log" placeholder="Pseudonyme">
+            </div>
+            <div>
+                <input type="password" id="password-log" placeholder="Mot de passe">
+            </div>
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</div>
+<div class="popup enregistrer">
+    <div class="popin-content">
+        <div class="close-popin">Close</div>
+        <form action="">
+            <div>
+                <input type="text" id="pseudo-reg" placeholder="Pseudonyme">
+            </div>
+            <div>
+                <input type="email" id="mail-reg" placeholder="Email">
+            </div>
+            <div>
+                <input type="password" id="password-reg" placeholder="Mot de passe">
+            </div>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+</div>
 </body>
 
 <script src="/resources/js/jquery.min.js"></script>

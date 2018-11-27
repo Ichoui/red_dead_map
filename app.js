@@ -1,11 +1,21 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 const path = require('path');
 require('dotenv').config();
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'images'))); // donne le droit d'accès au dossier au dossier images (pour les images de l'api)
+
+//Configure Mongoose
+const urlMongoose = 'mongodb+srv://canada:' + process.env.MONGO_ATLAS_PW +
+    '@api-canada-hiz94.mongodb.net/' + process.env.MONGO_DATABASE + '?retryWrites=true';
+
+mongoose.connect(urlMongoose, {useNewUrlParser: true})
+    .then(e => console.log('State : Connected to database!'))
+    .catch(err => console.log('State : Cant\'t connect to Database', err));
+mongoose.Promise = global.Promise;
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -26,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public/'))); // donne les droits d'
 app.get('/', function (req, res) {
     res.render('index');
 });
+
+
 
 
 // GESTION DES ERREURS

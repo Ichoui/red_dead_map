@@ -81,6 +81,8 @@ $(document).ready(function () {
 
     // GROUP : SCULPTURES
     customMarker(11225, 8500, icons.iconTest, sculptures, "aaaaaa");
+    customMarker(8250, 8500, icons.iconTest, sculptures, "tagel");
+    customMarker(8250, 8500, icons.iconTest, sculptures, "tagel");
 
 
     // #####################  ADD GROUPS TO THE MAP OBJECT  #####################

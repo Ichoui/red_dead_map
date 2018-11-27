@@ -23,5 +23,14 @@ $(document).ready(function () {
     $(label).on('click', function () {
         console.log($(this));
         $(this).toggleClass('disabled');
-    })
+    });
+
+    // Connexion
+    $('.login').on('click', function () {
+       $('.popup.connexion').show();
+    });
+    $('.register').on('click', function () {
+        $('.popup.enregistrer').show();
+    });
+    $('.close-popin').hide();
 });

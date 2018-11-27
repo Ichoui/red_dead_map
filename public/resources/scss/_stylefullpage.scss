@@ -19,6 +19,15 @@ $height-contenu: 90vh;
     }
 
   }
+  .login {
+    position: absolute;
+    right: 20px;
+    color: white;
+    &:hover {
+      color: $rdr2-red-title;
+      cursor: pointer;
+    }
+  }
 }
 
 #menu-panel {
@@ -56,6 +65,40 @@ $height-contenu: 90vh;
 .clearboth:after {
   clear: both;
   content: '';
+}
+
+// popup
+.popup {
+  display:none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 450;
+  .popin-content {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111e39;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    .close {
+      color:black;
+    }
+    form {
+      input {
+        margin-top:5px;
+      }
+      button {
+        margin-top: 5px;
+      }
+    }
+  }
 }
 
 //############ Modif CSS leaflet ###########
