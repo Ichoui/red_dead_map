@@ -36,6 +36,9 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
+const authRoutes = require('./config/routes/users');
+app.use('/auth', authRoutes);
+
 
 
 

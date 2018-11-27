@@ -2,6 +2,7 @@
   "name": "api",
   "version": "0.0.1",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "bootstrap": "^4.1.3",
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
