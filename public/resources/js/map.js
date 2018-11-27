@@ -91,5 +91,4 @@ $(document).ready(function () {
         "<span class='iconic icon-statue'></span><span>Sculptures</span>": sculptures
     };
     L.control.layers(null, overlays).addTo(map);
-
 });

@@ -6314,7 +6314,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 @font-face {
   font-family: 'reddead-icomoon';
-  src: url("../fonts/reddead-icomoon/fonts/reddead-icomoon.ttf?k66fuu") format("truetype"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.woff?k66fuu") format("woff"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.svg?k66fuu#reddead-icomoon") format("svg");
+  src: url("../fonts/reddead-icomoon/fonts/reddead-icomoon.ttf?ojduyg") format("truetype"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.woff?ojduyg") format("woff"), url("../fonts/reddead-icomoon/fonts/reddead-icomoon.svg?ojduyg#reddead-icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -6330,6 +6330,9 @@ a.text-dark:hover, a.text-dark:focus {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-close:before {
+  content: "\e904"; }
 
 .icon-zoom-out:before {
   content: "\e900"; }
@@ -6374,11 +6377,9 @@ html, body {
     #menubar .title:hover {
       color: #ee0000;
       cursor: pointer; }
-  #menubar .login {
-    position: absolute;
-    right: 20px;
+  #menubar .login, #menubar .register {
     color: white; }
-    #menubar .login:hover {
+    #menubar .login:hover, #menubar .register:hover {
       color: #ee0000;
       cursor: pointer; }
 
@@ -6430,10 +6431,14 @@ html, body {
     text-align: center;
     padding: 20px;
     border-radius: 5px; }
-    .popup .popin-content .close {
-      color: black; }
+    .popup .popin-content .close-popin {
+      color: black;
+      position: absolute;
+      top: 5px;
+      right: 5px; }
     .popup .popin-content form input {
-      margin-top: 5px; }
+      margin-top: 5px;
+      padding: 5px; }
     .popup .popin-content form button {
       margin-top: 5px; }
 

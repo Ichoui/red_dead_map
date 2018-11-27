@@ -27,10 +27,13 @@ $(document).ready(function () {
 
     // Connexion
     $('.login').on('click', function () {
-       $('.popup.connexion').show();
+        $('.connexion').show();
     });
     $('.register').on('click', function () {
-        $('.popup.enregistrer').show();
+        $('.enregistrer').show();
     });
-    $('.close-popin').hide();
+    $('.close-popin').on('click', function () {
+        $('.popup.connexion').hide();
+        $('.popup.enregistrer').hide();
+    });
 });

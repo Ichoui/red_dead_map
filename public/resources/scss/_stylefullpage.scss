@@ -19,9 +19,7 @@ $height-contenu: 90vh;
     }
 
   }
-  .login {
-    position: absolute;
-    right: 20px;
+  .login, .register {
     color: white;
     &:hover {
       color: $rdr2-red-title;
@@ -37,7 +35,7 @@ $height-contenu: 90vh;
   height: $height-contenu;
   z-index: 404;
   box-shadow: 3px 1px 18px 1px $rdr2-bgc;
-  display:flex;
+  display: flex;
   flex-direction: column;
   //justify-content: flex-end;;
   .copyrights {
@@ -69,7 +67,7 @@ $height-contenu: 90vh;
 
 // popup
 .popup {
-  display:none;
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -87,12 +85,16 @@ $height-contenu: 90vh;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
-    .close {
-      color:black;
+    .close-popin {
+      color: black;
+      position: absolute;
+      top: 5px;
+      right: 5px;
     }
     form {
       input {
-        margin-top:5px;
+        margin-top: 5px;
+        padding:5px;
       }
       button {
         margin-top: 5px;
@@ -140,7 +142,7 @@ $height-contenu: 90vh;
         text-decoration: line-through;
       }
       span {
-        color:lightgray !important;
+        color: lightgray !important;
       }
     }
     .leaflet-control-layers-overlays {

@@ -9,8 +9,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'images'))); // donne le droit d'accès au dossier au dossier images (pour les images de l'api)
 
 //Configure Mongoose
-const urlMongoose = 'mongodb+srv://canada:' + process.env.MONGO_ATLAS_PW +
-    '@api-canada-hiz94.mongodb.net/' + process.env.MONGO_DATABASE + '?retryWrites=true';
+const urlMongoose = 'mongodb+srv://reddead:' + process.env.MONGO_ATLAS_PW + '@cluster0-rcqfl.mongodb.net/test?retryWrites=true';
 
 mongoose.connect(urlMongoose, {useNewUrlParser: true})
     .then(e => console.log('State : Connected to database!'))
