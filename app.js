@@ -3,17 +3,20 @@ const app = express();
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
+const bodyParser = require('body-parser')
+
 require('dotenv').config();
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'images'))); // donne le droit d'accès au dossier au dossier images (pour les images de l'api)
 
 //Configure Mongoose
-const urlMongoose = 'mongodb+srv://reddead:' + process.env.MONGO_ATLAS_PW + '@cluster0-rcqfl.mongodb.net/test?retryWrites=true';
+const urlMongoose = 'mongodb+srv://' + process.env.MONGO_ATLAS_USER + ':' + process.env.MONGO_ATLAS_PW +
+    '@cluster0-rcqfl.mongodb.net/' + process.env.MONGO_DATABASE + '?retryWrites=true';
 
 mongoose.connect(urlMongoose, {useNewUrlParser: true})
     .then(e => console.log('State : Connected to database!'))
-    .catch(err => console.log('State : Cant\'t connect to Database', err));
+    .catch(err => console.log('State : Cant\'t connect to Database : ', err));
 mongoose.Promise = global.Promise;
 
 app.use((req, res, next) => {
@@ -25,6 +28,8 @@ app.use((req, res, next) => {
     }
     next();
 });
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //VIEW ENGINE
 app.set('view engine', 'ejs'); //préchargement engine
@@ -37,10 +42,7 @@ app.get('/', function (req, res) {
 });
 
 const usersRoute = require('./config/routes/users');
-app.use('/users', usersRoute);
-
-
-
+app.use('/users/', usersRoute);
 
 // GESTION DES ERREURS
 app.use((req, res, next) => {
