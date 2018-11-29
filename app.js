@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-const usersRoute = require('./config/routes/users');
+const usersRoute = require('./config/auth/users');
 app.use('/users/', usersRoute);
 
 // GESTION DES ERREURS
