@@ -7,8 +7,6 @@ const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
-app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'images'))); // donne le droit d'accès au dossier au dossier images (pour les images de l'api)
 
 //Configure Mongoose
 const urlMongoose = 'mongodb+srv://' + process.env.MONGO_ATLAS_USER + ':' + process.env.MONGO_ATLAS_PW +
@@ -19,6 +17,11 @@ mongoose.connect(urlMongoose, {useNewUrlParser: true})
     .catch(err => console.log('State : Cant\'t connect to Database : ', err));
 mongoose.Promise = global.Promise;
 
+//VIEW ENGINE
+app.set('view engine', 'ejs'); //préchargement engine
+app.set('views', path.join(__dirname, '/public/')); // changement du dossier views
+
+app.use(morgan('dev'));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-Width, Content-Type, Accepte, Authorization');
@@ -31,14 +34,16 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//VIEW ENGINE
-app.set('view engine', 'ejs'); //préchargement engine
-app.set('views', path.join(__dirname, '/public/')); // changement du dossier views
+
 
 //  ACCES AUX PATHS API & Index
 app.use(express.static(path.join(__dirname, 'public/'))); // donne les droits d'accès au dossier public (pour les resources)
 app.get('/', function (req, res) {
     res.render('index');
+});
+
+app.get('/map', function (req, res) {
+    res.render('map');
 });
 
 const usersRoute = require('./config/auth/users');
