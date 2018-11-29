@@ -15,8 +15,8 @@
 <div id="menubar" class="navbar">
     <span class="title">RED DEAD REDEMPTION 2 - MAP</span>
     <div class="nav navbar-nav navbar-right">
-    <a href="#" class="register">S'enregistrer</a>
-    <a href="#" class="login">Connexion</a>
+        <a href="#" class="register">S'enregistrer</a>
+        <a href="#" class="login">Connexion</a>
     </div>
 </div>
 <div id="menu-panel" class="clearboth">
@@ -38,10 +38,10 @@
         <div class="close-popin"><span class="icon-close"></span></div>
         <form action="/users/login" method="post">
             <div>
-                <input type="text" id="pseudo-log" placeholder="Pseudonyme">
+                <input type="text" id="pseudo-log" name="pseudo" placeholder="Pseudonyme">
             </div>
             <div>
-                <input type="password" id="password-log" placeholder="Mot de passe">
+                <input type="password" id="password-log" name="password" placeholder="Mot de passe">
             </div>
             <button type="submit">Se connecter</button>
         </form>
