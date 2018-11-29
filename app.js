@@ -4,8 +4,13 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const flash = require('connect-flash');
 
 require('dotenv').config();
+require('./config/auth/passport')(passport);
 
 
 //Configure Mongoose
@@ -21,7 +26,6 @@ mongoose.Promise = global.Promise;
 app.set('view engine', 'ejs'); //préchargement engine
 app.set('views', path.join(__dirname, '/public/')); // changement du dossier views
 
-app.use(morgan('dev'));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-Width, Content-Type, Accepte, Authorization');
@@ -31,23 +35,32 @@ app.use((req, res, next) => {
     }
     next();
 });
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(morgan('dev')); // logger !
 app.use(bodyParser.json());
-
-
-
-//  ACCES AUX PATHS API & Index
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(flash());
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public/'))); // donne les droits d'accès au dossier public (pour les resources)
-app.get('/', function (req, res) {
-    res.render('index');
-});
+app.use(session({
+    secret: 'thesecret',
+    saveUninitialized: false,
+    resave: false
+}));
 
-app.get('/map', function (req, res) {
-    res.render('map');
-});
+app.use(passport.initialize());
+app.use(passport.session());
 
-const usersRoute = require('./config/auth/users');
-app.use('/users/', usersRoute);
+
+//  ACCES AUX PATHS ET ROUTES
+const usersRoute = require('./config/routes/auth')(passport);
+const route = require('./config/routes/routes');
+app.use('/', route);
+// noinspection JSCheckFunctionSignatures
+app.use('/users', usersRoute);
+
+
+
+
 
 // GESTION DES ERREURS
 app.use((req, res, next) => {
