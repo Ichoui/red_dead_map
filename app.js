@@ -10,7 +10,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 require('dotenv').config();
-require('./config/auth/passport')(passport);
+require('./config/auth/passport')/*(passport)*/;
 
 
 //Configure Mongoose
@@ -38,8 +38,8 @@ app.use((req, res, next) => {
 app.use(morgan('dev')); // logger !
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(flash());
 app.use(cookieParser());
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public/'))); // donne les droits d'accès au dossier public (pour les resources)
 app.use(session({
     secret: 'thesecret',
@@ -51,7 +51,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //  ACCES AUX PATHS ET ROUTES
-const usersRoute = require('./config/routes/users')(passport);
+const usersRoute = require('./config/routes/users')/*(passport)*/;
 const route = require('./config/routes/routes');
 app.use('/', route);
 // noinspection JSCheckFunctionSignatures
