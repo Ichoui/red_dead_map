@@ -4,13 +4,18 @@ const User = require('../models/users.model');
 
 module.exports = function (passport) {
     passport.serializeUser(function (user, done) {
-        done(null, user)
+        done(null, user._id);
     });
     passport.deserializeUser(function (user, done) {
-        done(null, user)
+        User.findById(id, function (err, user) {
+            done(err, user)
+        });
     });
 
-    passport.use(new localStrategy(function (pseudo, password, done) {
+    passport.use('login', new localStrategy({
+        passReqToCallback: true
+    }, function (req,pseudo, password, done) {
+        console.log(req);
         console.log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
         User.findOne({
             pseudo: pseudo
@@ -35,4 +40,4 @@ module.exports = function (passport) {
             }
         })
     }))
-}
+};

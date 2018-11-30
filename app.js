@@ -50,17 +50,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 //  ACCES AUX PATHS ET ROUTES
-const usersRoute = require('./config/routes/auth')(passport);
+const usersRoute = require('./config/routes/users')(passport);
 const route = require('./config/routes/routes');
 app.use('/', route);
 // noinspection JSCheckFunctionSignatures
 app.use('/users', usersRoute);
-
-
-
-
 
 // GESTION DES ERREURS
 app.use((req, res, next) => {

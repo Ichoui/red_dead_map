@@ -9,7 +9,7 @@ const loggedIn = function (req, res, next) {
     } else {
         res.redirect('/')
     }
-}
+};
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -17,10 +17,9 @@ router.get('/', function (req, res, next) {
 });
 
 // loggedIn to add after the Path
-router.get('/map', function (req, res, next) {
+router.get('/map', loggedIn, function (req, res, next) {
     res.render('map', {user: req.user})
 });
-
 
 
 module.exports = router;

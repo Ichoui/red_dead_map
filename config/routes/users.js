@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/users.model');
 
-/* GET home page. */
-
-
 module.exports = function (passport) {
     router.post('/signup', function (req, res) {
         const body = req.body,
@@ -37,7 +34,7 @@ module.exports = function (passport) {
         })
     });
 
-    var loggedIn = function (req, res, next) {
+    const loggedIn = function (req, res, next) {
             console.log(req.isAuthenticated());
         if (req.isAuthenticated()) {
             //req.isAuthenticated() will return true if user is logged in
@@ -47,12 +44,11 @@ module.exports = function (passport) {
         }
     };
 
-    router.post('/login', passport.authenticate('local', {
-        failureRedirect: '/fuck', // - / à l'avenir
+    router.post('/login', passport.authenticate('login', {
         successRedirect: '/map',
-        failureFlash: false
-    }), function (req, res) {
-        res.send('hey')
-    });
+        failureRedirect: '/fuck-yourself',
+        failureFlash : true
+    }));
+
     return router;
 };
