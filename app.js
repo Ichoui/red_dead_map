@@ -10,7 +10,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 
 require('dotenv').config();
-require('./config/auth/passport')/*(passport)*/;
+// require('./config/auth/passport')/*(passport)*/;
 
 
 //Configure Mongoose
@@ -46,7 +46,6 @@ app.use(session({
     saveUninitialized: false,
     resave: false
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
 
